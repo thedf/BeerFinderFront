@@ -1,0 +1,404 @@
+$header-height: 70px;
+$Menu-width: 264px;
+$Menu-collapsed-width: 80px;
+
+// color list for build layouts
+// temp variables
+$primary-color: #297373;
+$warning-color: #0f0f0f;
+$danger-color: #f44236;
+$success-color: #1de9b6;
+$purple-color: #a389d4;
+$info-color: #3ebfea;
+$secondary-color: #0f0f0f;
+$default-color: #d6d6d6;
+$light-color: #f2f2f2;
+$dark-color: #37474f;
+$inverse-color: $dark-color;
+$theme-border: #eaeaea;
+
+$theme-font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$theme-font-size: 16px;
+$theme-background: #fff;
+$theme-font-color: rgb(51, 51, 51);
+
+// form-control variables
+$form-bg: #f0f3f6;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary": $primary-color,
+    "secondary": $secondary-color,
+    "success": $success-color,
+    "info": $info-color,
+    "warning": $warning-color,
+    "danger": $danger-color,
+    "light": $light-color,
+    "dark": $dark-color,
+  ),
+  $theme-colors
+); // Color contrast
+
+/**  =====================
+      Custom css start
+==========================  **/
+body {
+  font-family: $theme-font-family;
+  font-size: $theme-font-size;
+  color: $theme-font-color;
+  font-weight: 400;
+  background: $theme-background;
+  position: relative;
+}
+
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.img-radius {
+  border-radius: 50%;
+}
+
+/* ==========  card css start  =========== */
+
+p.text-muted {
+  font-size: 13px;
+}
+
+.card {
+  border-radius: 0;
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  border: none;
+  margin-bottom: 30px;
+  transition: all 0.5s ease-in-out;
+
+  .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 20px 25px;
+    position: relative;
+
+    + .card-block,
+    + .card-body {
+    }
+
+    h5 {
+      margin-bottom: 0;
+      color: #000;
+      font-size: 17px;
+      font-weight: 400;
+      display: inline-block;
+      margin-right: 10px;
+      line-height: 1.1;
+      position: relative;
+
+      &:after {
+        content: "";
+        background-color: $primary-color;
+        position: absolute;
+        left: -25px;
+        top: 0;
+        width: 4px;
+        height: 20px;
+      }
+    }
+
+    &.borderless {
+      border-bottom: none;
+
+      h5:after {
+        display: none;
+      }
+    }
+
+    .card-header-right {
+      right: 10px;
+      top: 10px;
+      display: inline-block;
+      float: right;
+      padding: 0;
+      position: absolute;
+      @media only screen and (max-width: 575px) {
+        display: none;
+      }
+
+      .dropdown-menu {
+        margin-top: 0;
+
+        li {
+          a {
+            font-size: 14px;
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .btn.dropdown-toggle {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        color: #888;
+
+        i {
+          margin-right: 0;
+        }
+
+        &:after {
+          display: none;
+        }
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    border-top: 1px solid #f1f1f1;
+    background: transparent;
+    padding: 25px;
+  }
+
+  .card-block,
+  .card-body {
+    padding: 30px 25px;
+  }
+
+  &.card-load {
+    position: relative;
+    overflow: hidden;
+
+    .card-loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background-color: rgba(256, 256, 256, 0.7);
+      z-index: 999;
+
+      i {
+        margin: 0 auto;
+        color: $primary-color;
+        font-size: 24px;
+        align-items: center;
+        display: flex;
+      }
+    }
+  }
+
+  &.full-card {
+    z-index: 99999;
+    border-radius: 0;
+  }
+}
+/* ==========  scrollbar End  =========== */
+
+.scroll-y {
+  z-index: 1027;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.custom-select,
+.form-control {
+  background: $theme-background;
+  padding: 10px 20px;
+  font-size: 14px;
+  height: auto;
+
+  &.form-control-lg {
+    font-size: 1.25rem;
+  }
+
+  &.form-control-sm {
+    height: calc(1.8125rem + 2px);
+    font-size: 0.875rem;
+  }
+
+  &.form-control-range {
+    box-shadow: none;
+  }
+
+  &:focus {
+    background: $theme-background;
+  }
+
+  &::-moz-placeholder {
+    color: #aaaeb3;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: #aaaeb3;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #aaaeb3;
+  }
+}
+/* input group start */
+
+.input-group {
+  background: $theme-background;
+
+  .input-group-text {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: transparent;
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .custom-file-label {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}
+
+.cust-file-button {
+  .custom-file-label {
+    height: calc(2.25rem + 8px);
+    line-height: 2.5;
+
+    &::after {
+      padding: 0.775rem 0.75rem;
+      height: 2.65rem;
+    }
+  }
+}
+
+.custom-select {
+  height: calc(2.25rem + 9px);
+}
+/* input group End */
+/**====== Form Componant css end ======**/
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.55rem + 2px);
+}
+.input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]),
+.input-group-lg
+  > .input-group-append
+  > select.input-group-text:not([size]):not([multiple]),
+.input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]),
+.input-group-lg
+  > .input-group-prepend
+  > select.input-group-text:not([size]):not([multiple]),
+.input-group-lg > select.form-control:not([size]):not([multiple]),
+select.form-control-lg:not([size]):not([multiple]) {
+  height: calc(3.375rem + 2px);
+}
+
+.header-chat,
+.header-user-list {
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  border-radius: 0;
+  z-index: 1030;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;
+
+  .h-list-header {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .h-list-body {
+    padding: 0;
+  }
+
+  &.open {
+    box-shadow: rgba(224, 224, 224, 0.53) -8px 0px 16px 0px;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .msg-card .msg-block > .row > div:before {
+    background: none;
+  }
+}
+/* massage page end */
+/**====== Chat css end ======**/
