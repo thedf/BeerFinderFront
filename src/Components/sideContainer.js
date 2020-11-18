@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Col, Row, Button, Card, Container, Table } from "react-bootstrap";
+import React from "react";
+import { Col, Row, Button, Container } from "react-bootstrap";
 
 export const SideContainer = props => {
     return (
@@ -36,13 +36,9 @@ export const SideContainer = props => {
                         className="main-friend-list my-auto"
                         style={{ height: "calc(100vh - 85px)" }}
                     >
-                        {/* <PerfectScrollbar
-                  style={{ overflowX: "hidden", paddingLeft: 0, paddingRight: 0 }}
-                > */}
                         <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
                             {props.children}
                         </Container>
-                        {/* </PerfectScrollbar> */}
                     </div>
                 </div>
             </div>

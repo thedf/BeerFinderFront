@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-// import Aux from "../hoc/_Aux";
-class beerCard extends Component {
+import { Col, Card } from "react-bootstrap";
+
+class BeerCard extends Component {
     handleChoice = () => {
         this.props.onClick(this.props.node);
-        // console.log(this.props.id);
     };
     render() {
         return (
@@ -17,12 +16,6 @@ class beerCard extends Component {
             >
                 <Card
                     onClick={this.handleChoice}
-                    // className={
-                    //   "rounded " +
-                    //   (this.props.isActive
-                    //     ? " zoomerIsActive"
-                    //     : " bg-white shadow card-shadow zoomer")
-                    // }
                     style={{ cursor: "pointer", marginBottom: 10, flex: 1 }}
 
                 >
@@ -48,4 +41,4 @@ class beerCard extends Component {
     }
 }
 
-export default beerCard;
+export default BeerCard;

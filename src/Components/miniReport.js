@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Col, Row, Button, Card, Container, Table } from "react-bootstrap";
+import React from "react";
+import { Col, Row, Card, Table } from "react-bootstrap";
 import {
     SideContainer,
 } from "./sideContainer";
 
 const MiniReport = props => {
-    // console.log(props.node);
     let listClass = ["header-user-list"];
     if (props.listOpen) {
         listClass = [...listClass, "open"];
