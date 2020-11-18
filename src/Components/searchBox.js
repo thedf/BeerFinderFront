@@ -11,7 +11,6 @@ const SearchBox = props => {
         props.searchParams.timeout = setTimeout(() => {
             props.setSearch({ ...props.searchParams, name: value })
         }, 500);
-
     }
     return (
         <Card>

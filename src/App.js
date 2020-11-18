@@ -26,24 +26,23 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <Container lg={10} md={10} style={{ marginTop: 40 }}>
+    <Container lg={10} md={10} style={{ marginTop: 40 }}>
 
-        <SearchBox setSearch={setSearch} searchParams={searchParams} />
+      <SearchBox setSearch={setSearch} searchParams={searchParams} />
 
-        <ResultsPage searchTerm={searchParams.name} onChoice={handleChoice} />
-        {state.listOpen && (
-          <MiniReport
-            listOpen={state.listOpen}
-            node={state.node}
-            closed={() => {
-              setState({ ...state, listOpen: false });
-            }}
-          />
-        )}
+      <ResultsPage searchTerm={searchParams.name} onChoice={handleChoice} />
 
-      </Container>
-    </div>
+      {state.listOpen && (
+        <MiniReport
+          listOpen={state.listOpen}
+          node={state.node}
+          closed={() => {
+            setState({ ...state, listOpen: false });
+          }}
+        />
+      )}
+
+    </Container>
   );
 }
 
